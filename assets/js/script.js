@@ -35,6 +35,12 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro e
 
 //1.
 const containerRef = document.querySelector('.container');
+//5. a.
+const btnStartRef = document.getElementById('btnStart');
+const btnResetRef = document.getElementById('btnReset');
+
+//5. b.
+btnResetRef.addEventListener('click', reset);
 
 
 //2.
@@ -65,7 +71,7 @@ function createSquare (index) {
     return newSquare;
 };
 
-
+//5. b.
 function reset () {
     containerRef.innerHTML = '';
 };
