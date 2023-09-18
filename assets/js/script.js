@@ -29,7 +29,8 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro e
 5. Creo due button, uno per generare il gioco ed uno per resettarlo;
    a. Prendo i riferimenti dei due button;
    b. Creo una funzione per il button reset, dove all'evento click sovrascrivo i valori contenuti nel container tramite assegnazione stringa vuota;
-   c. Creo una funzione per il button start, dove all'evento click faccio ripartire tutto il blocco del ciclo for;
+   c. Tutto il ciclo lo chiudo in una funzione che verrà richiamata all'evento click del button start;
+   d. Creo una funzione per il button start, dove all'evento click faccio ripartire tutto il blocco del ciclo for contenuta in una funzione;
 */
 
 
@@ -75,3 +76,6 @@ function createSquare (index) {
 function reset () {
     containerRef.innerHTML = '';
 };
+
+//5. c.
+function start () {};
