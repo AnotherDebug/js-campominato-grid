@@ -27,6 +27,9 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro e
    b. Nel corpo della funzione creo una proprietà custom che raccoglie il valore dell'indice;
 
 5. Creo due button, uno per generare il gioco ed uno per resettarlo;
+   a. Prendo i riferimenti dei due button;
+   b. Creo una funzione per il button reset, dove all'evento click sovrascrivo i valori contenuti nel container tramite assegnazione stringa vuota;
+   c. Creo una funzione per il button start, dove all'evento click faccio ripartire tutto il blocco del ciclo for;
 */
 
 
@@ -60,4 +63,9 @@ function createSquare (index) {
     //4.b.
     newSquare._index = index;
     return newSquare;
+};
+
+
+function reset () {
+    containerRef.innerHTML = '';
 };
