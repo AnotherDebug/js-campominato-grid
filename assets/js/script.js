@@ -41,25 +41,31 @@ const btnStartRef = document.getElementById('btnStart');
 const btnResetRef = document.getElementById('btnReset');
 
 //5. b.
-btnResetRef.addEventListener('click', reset);
+
+start();
+reset();
 
 
 //2.
-for (let i = 0; i < 100; i++) {
-    //2. b.
-    const square = createSquare(i);
-    //2. c.
-    containerRef.append(square);
-    //3. a.
-    square.addEventListener ('click', function () {
-        //3. b.
-        this.classList.toggle('active');
-        console.log(this);
-        //4.
-        console.log(this._index);
-    });
 
+function init () {
+    for (let i = 0; i < 100; i++) {
+        //2. b.
+        const square = createSquare(i);
+        //2. c.
+        containerRef.append(square);
+        //3. a.
+        square.addEventListener ('click', function () {
+            //3. b.
+            this.classList.toggle('active');
+            console.log(this);
+            //4.
+            console.log(this._index);
+        });
+    
+    };
 };
+
 
 
 
@@ -74,8 +80,16 @@ function createSquare (index) {
 
 //5. b.
 function reset () {
-    containerRef.innerHTML = '';
+    btnResetRef.addEventListener('click', function() {
+        containerRef.innerHTML = '';
+    });
+    
 };
 
 //5. c.
-function start () {};
+function start () {
+    btnStartRef.addEventListener ('click', function() {
+        containerRef.innerHTML = '';
+        init();
+    });
+};
