@@ -18,10 +18,12 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro e
    b. Creo una variabile che contiene la funzione per inserire dinamicamente il div;
    c. Aggiungo square al mio container con .append();
    
-
 3. Ogni quadrato avrà un evento al click, che aggiunge o toglie la classe active;
    a. Ad ogni iterazione del ciclo c'è un evento al click;
    b. Per richiamare il div all'evento al click, utilizzo la keyword this che è riferita a square che ha ricevuto l'evento, gli applico il metodo toggle che aggiunge o toglie la classe active dall'elemento div;
+
+4. Stampo in console il numero corrispondente della cella cliccata;
+   a. Per stampare il numero della cella corrispondente in console utilizzo l'indice, che lo passo come parametro della funzione atta a creare un nuovo elemento div;
 */
 
 
@@ -35,14 +37,14 @@ for (let i = 0; i < 100; i++) {
     const square = createSquare();
     //2. c.
     containerRef.append(square);
-    console.log(square);
     //3. a.
     square.addEventListener ('click', function () {
         //3. b.
         this.classList.toggle('active');
+        console.log(this);
     });
-};
 
+};
 //2. a.
 function createSquare () {
     const newSquare = document.createElement('div');
