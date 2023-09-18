@@ -20,6 +20,8 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro e
    
 
 3. Ogni quadrato avrà un evento al click, che aggiunge o toglie la classe active;
+   a. Ad ogni iterazione del ciclo c'è un evento al click;
+   b. Per richiamare il div all'evento al click, utilizzo la keyword this che è riferita a square che ha ricevuto l'evento, gli applico il metodo toggle che aggiunge o toglie la classe active dall'elemento div;
 */
 
 
@@ -34,6 +36,11 @@ for (let i = 0; i < 100; i++) {
     //2. c.
     containerRef.append(square);
     console.log(square);
+    //3. a.
+    square.addEventListener ('click', function () {
+        //3. b.
+        this.classList.toggle('active');
+    });
 };
 
 //2. a.
