@@ -14,8 +14,9 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro e
 1. Salvo il riferimento del mio container dove inserisco dinamicamente gli elementi 'div';
 
 2. Creo un ciclo che ad ogni iterazione genera il mio elemento 'div', che di fatto sarà un quadrato;
-   b. creo la funzione che aggiunge i quadrati, a cui vado ad applicare la classe square;
-   a. Creo una variabile che contiene la funzione per inserire dinamicamente il div;
+   a. creo la funzione che aggiunge i quadrati, a cui vado ad applicare la classe square;
+   b. Creo una variabile che contiene la funzione per inserire dinamicamente il div;
+   c. Aggiungo square al mio container con .append();
    
 
 3. Ogni quadrato avrà un evento al click, che aggiunge o toglie la classe active;
@@ -28,6 +29,16 @@ const containerRef = document.querySelector('.container');
 
 //2.
 for (let i = 0; i < 100; i++) {
-    containerRef.innerHTML += `<div class="square"></div>`;
-    
+    //2. b.
+    const square = createSquare();
+    //2. c.
+    containerRef.append(square);
+    console.log(square);
+};
+
+//2. a.
+function createSquare () {
+    const newSquare = document.createElement('div');
+    newSquare.className = 'square';
+    return newSquare;
 };
