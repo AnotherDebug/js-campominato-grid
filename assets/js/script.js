@@ -25,6 +25,8 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro e
 4. Stampo in console il numero corrispondente della cella cliccata;
    a. Per stampare il numero della cella corrispondente in console utilizzo l'indice, che lo passo come parametro della funzione atta a creare un nuovo elemento div;
    b. Nel corpo della funzione creo una proprietà custom che raccoglie il valore dell'indice;
+
+5. Creo due button, uno per generare il gioco ed uno per resettarlo;
 */
 
 
@@ -48,6 +50,9 @@ for (let i = 0; i < 100; i++) {
     });
 
 };
+
+
+
 //2. a. (function) + 4. a. (index)
 function createSquare (index) {
     const newSquare = document.createElement('div');
