@@ -24,6 +24,7 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro e
 
 4. Stampo in console il numero corrispondente della cella cliccata;
    a. Per stampare il numero della cella corrispondente in console utilizzo l'indice, che lo passo come parametro della funzione atta a creare un nuovo elemento div;
+   b. Nel corpo della funzione creo una proprietà custom che raccoglie il valore dell'indice;
 */
 
 
@@ -34,7 +35,7 @@ const containerRef = document.querySelector('.container');
 //2.
 for (let i = 0; i < 100; i++) {
     //2. b.
-    const square = createSquare();
+    const square = createSquare(i);
     //2. c.
     containerRef.append(square);
     //3. a.
@@ -42,12 +43,16 @@ for (let i = 0; i < 100; i++) {
         //3. b.
         this.classList.toggle('active');
         console.log(this);
+        //4.
+        console.log(this._index);
     });
 
 };
-//2. a.
-function createSquare () {
+//2. a. (function) + 4. a. (index)
+function createSquare (index) {
     const newSquare = document.createElement('div');
     newSquare.className = 'square';
+    //4.b.
+    newSquare._index = index;
     return newSquare;
 };
